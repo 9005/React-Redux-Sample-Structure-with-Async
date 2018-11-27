@@ -17,24 +17,21 @@ class GetFormData extends Component {
   }
 
   addForm = () => {
-     history.push('/addForm')
+    history.push('/addForm')
   }
 
   renderFormDetails = () => {
     if (this.props.formData !== undefined && this.props.formData.length > 0) {
       const formDataArray = this.props.formData;
-      const resultArray = formDataArray.map((item, index) => {
-        return (
-          <div>
-            <div key={index}>
-              UserId: {item.userId}<br />
-              id: {item.id}<br />
-              title: {item.title}<br />
-              body: {item.body}<br />
-            </div><br /></div>
-        )
-      });
-      return (resultArray);
+      return formDataArray.map((item, index) => (
+        <div>
+          <div key={index}>
+            UserId: {item.userId}<br />
+            id: {item.id}<br />
+            title: {item.title}<br />
+            body: {item.body}<br />
+          </div><br /></div>
+      ));
     }
     return (<div />);
   }
