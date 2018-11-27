@@ -1,11 +1,14 @@
-//import axios from 'axios';
-//import guestList from '../Data/guestList.json'
+import axios from 'axios';
 
 export default {
-  authenticateGuestDetails: async () => {
-    return 'SUCCESS AUTHENTICATION tool';
+  getFormDetails: async () => {
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+    const result = await axios.get(url);
+    return result.data;
   },
-  clearSessionLogoutDetails: async () => {
-    return 'SUCCESS LOGOUT TOOL';
+  submitFormData: async (requestBody) => {
+    const url = 'https://jsonplaceholder.typicode.com/posts';
+    await axios.post(url, requestBody);
+    return 'successfully added form data';
   }
 };

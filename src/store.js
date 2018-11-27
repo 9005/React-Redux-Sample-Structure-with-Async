@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { LoginReducer } from './reducer/LoginReducer';
-import { LogoutReducer } from './reducer/LogoutReducer';
+import { GetFormDataReducer } from './reducer/GetFormDataReducer';
+import { PostFormDataReducer } from './reducer/PostFormDataReducer';
 import thunk from 'redux-thunk';
 const rootReducer = combineReducers({
-  login: LoginReducer,
-  logout: LogoutReducer
+  getFormData: GetFormDataReducer,
+  postFormData: PostFormDataReducer
 });
 export default createStore(rootReducer, applyMiddleware(thunk));

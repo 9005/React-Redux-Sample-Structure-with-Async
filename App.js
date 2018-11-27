@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import Login from './components/Login';
+import { Router, Switch, Route } from 'react-router-dom';
+import GetFormData from './components/GetFormData';
+import PostFormData from './components/PostFormData';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Login />
-      </div>
+      <Router>
+        <Switch>
+          <Route strict exact path='/' component={GetFormData} />
+          <Route strict exact path='/' component={PostFormData} />
+        </Switch>
+      </Router>
     );
   }
 }
